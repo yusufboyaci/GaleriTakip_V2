@@ -25,15 +25,15 @@ namespace Core.Entity
         public Guid? MasterId { get; set; } //Üst Id demektir.Yetki vermede kullanılacaktır.
         public Status Status { get; set; }
         public DateTime? CreatedDate { get; set; }
-        public string CreatedComputerName { get; set; }
-        public string CreatedIP { get; set; }
-        public string CreatedADUserName { get; set; }
-        public string CreatedBy { get; set; }
+        public string? CreatedComputerName { get; set; }
+        public string? CreatedIP { get; set; }
+        public string? CreatedADUserName { get; set; }
+        public string? CreatedBy { get; set; }
 
         public DateTime? ModifiedDate { get; set; }
-        public string ModifiedComputerName { get; set; }
-        public string ModifiedIP { get; set; }
-        public string ModifiedADUserName { get; set; }
-        public string ModifiedBy { get; set; }
+        public string? ModifiedComputerName { get; set; }
+        public string? ModifiedIP { get; set; }
+        public string? ModifiedADUserName { get; set; }
+        public string? ModifiedBy { get; set; }
     }
 }
