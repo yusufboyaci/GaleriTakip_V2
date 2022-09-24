@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Enum
+namespace EntityLayer.Mapping
 {
-    public enum Role
+    public class UserMap
     {
-        None = 1,
-        Member = 2,//User
-        Admin = 3,
-        Musteri = 4
     }
 }
