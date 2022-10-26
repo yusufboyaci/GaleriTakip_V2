@@ -11,6 +11,6 @@ namespace Core.Enum
         None = 1,
         Member = 2,//User
         Admin = 3,
-        Musteri = 4
+        Customer = 4
     }
 }

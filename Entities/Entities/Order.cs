@@ -11,10 +11,13 @@ namespace EntityLayer.Entities
     {
         public Order()
         {
-
+            OrderDetails = new List<OrderDetail>();
         }
         public Guid CustomerId { get; set; }//FK
-        public bool OnaylandiMi { get; set; }
+        public bool IsConfirmed { get; set; }
         public string? FilePath { get; set; }
+        //Navigation Properties
+        public virtual Customer Customer { get; set; }
+        public virtual List<OrderDetail> OrderDetails { get; set; }
     }
 }
