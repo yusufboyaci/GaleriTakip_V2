@@ -20,7 +20,7 @@ namespace EntityLayer.Mapping
             builder.Property(x => x.Email).HasMaxLength(1000).IsRequired(false);
             builder.Property(x => x.PhoneNumber).HasMaxLength(100).IsRequired(true);
             builder.Property(x => x.Address).HasMaxLength(500).IsRequired(false);
-            builder.Property(x => x.Birthdate).HasColumnType("datetime2").IsRequired(false);
+            builder.Property(x => x.Birthdate).HasColumnType("timestamp").IsRequired(false);
             builder.HasOne(x => x.User).WithOne(x => x.Customer);
             builder.HasMany(x => x.Orders).WithOne(x => x.Customer).HasForeignKey(x => x.CustomerId).OnDelete(DeleteBehavior.NoAction);
             base.Configure(builder);
