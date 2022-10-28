@@ -11,7 +11,7 @@ namespace Core.Entity
 {
     public class CoreEntity : IEntity<Guid>
     {
-        NetworkFuntions networkFuntions = new NetworkFuntions();
+        NetworkFunctions networkFuntions = new NetworkFunctions();
         public CoreEntity()
         {
             this.Status = Status.None;

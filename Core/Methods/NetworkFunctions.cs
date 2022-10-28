@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Core.Methods
 {
-    public class NetworkFuntions
+    public class NetworkFunctions
     {
         public string GetLocalIpAddress()
         {
