@@ -92,23 +92,7 @@ namespace CarApi.Controllers
                 List<CarGallery> galeries = _galleryRepository.GetActives();
                 List<Car> cars = _carRepository.GetActives();
 
-                List<TableOfTheCarAndGallery> list = (
-                    from g in galeries
-                    join c in cars
-                    on g.Id equals c.CarGalleryId
-                    select new TableOfTheCarAndGallery
-                    {
-                        Id = c.Id,
-                        GalleryName = g.Name,
-                        GalleryAddress = g.Address,
-                        CarName = c.Name,
-                        Price = c.Price,
-                        Stock = c.Stock,
-                        FilePath = c.FilePath,
-                        Description = c.Descripton
-                    }
-                    ).ToList();
-                return Ok(list);
+                return Ok(_carRepository.GetCarsAndGaleries(galeries, cars));
 
             }
             catch (Exception ex)
