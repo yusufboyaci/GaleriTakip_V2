@@ -84,6 +84,7 @@ namespace UserApi.Controllers
         [HttpPost("Login")]
         public IActionResult Login(UserLoginVM user)
         {
+            //Kenime Not: Login ksımını Cookie Auth ile değil Vue.j eğitimini bitirip Vue.js eğitimine göre yap. Oracle eğitimnleri bitmediği sürece Vue.js e bakamayacağın için Login kısmını sonraya bırak.
             try
             {
                 bool result = _userRepository.CheckCredential(user.Username, user.Password);
