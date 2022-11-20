@@ -1,28 +1,27 @@
 ﻿using DataAccess.Context;
 using DataAccess.Repositories.Concrete;
 using EntityLayer.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CarsController : ControllerBase
+    public class CustomersController : ControllerBase
     {
-        CarRepository _carRepository;
-        CarGalleryRepository _galleryRepository;
-        public CarsController(AppDbContext context)
+        CustomerRepository _customerRepository;
+        public CustomersController(AppDbContext context)
         {
-            _carRepository = new CarRepository(context);
-            _galleryRepository = new CarGalleryRepository(context);
+            _customerRepository= new CustomerRepository(context);
         }
         [HttpGet("List")]
         public IActionResult List()
         {
             try
             {
-                List<Car> cars = _carRepository.GetActives();
-                return Ok(cars);
+                List<Customer> list  = _customerRepository.GetActives();
+                return Ok(list);
             }
             catch (Exception ex)
             {
@@ -34,19 +33,19 @@ namespace CarApi.Controllers
         {
             try
             {
-                return Ok(_carRepository.GetById(id));
+                return Ok(_customerRepository.GetById(id));
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
-            }
+            }        
         }
         [HttpPost("Add")]
-        public IActionResult Add(Car car)
+        public IActionResult Add(Customer customer) 
         {
             try
             {
-                _carRepository.Add(car);
+                _customerRepository.Add(customer);
                 return NoContent();
             }
             catch (Exception ex)
@@ -55,12 +54,12 @@ namespace CarApi.Controllers
             }
         }
         [HttpPut("Update")]
-        public IActionResult Update(Car car)
+        public IActionResult Update(Customer customer) 
         {
             try
             {
-                _carRepository.Update(car);
-                _carRepository.Activate(car.Id);
+                _customerRepository.Update(customer);
+                _customerRepository.Activate(customer.Id);
                 return NoContent();
             }
             catch (Exception ex)
@@ -69,26 +68,12 @@ namespace CarApi.Controllers
             }
         }
         [HttpDelete("Delete")]
-        public IActionResult Delete(Car car)
+        public IActionResult Delete(Customer customer)
         {
             try
             {
-                _carRepository.Remove(car);
+                _customerRepository.Remove(customer);
                 return NoContent();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-        [HttpGet("ListCarsAndGaleries")]
-        public IActionResult ListCarsAndGaleries()
-        {
-            try
-            {
-                List<CarGallery> galeries = _galleryRepository.GetActives();
-                List<Car> cars = _carRepository.GetActives();
-                return Ok(_carRepository.GetCarsAndGaleries(galeries, cars));
             }
             catch (Exception ex)
             {
