@@ -21,8 +21,7 @@ namespace CarApi.Controllers
         {
             try
             {
-                List<Car> cars = _carRepository.GetActives();
-                return Ok(cars);
+                return Ok(_carRepository.GetActives());
             }
             catch (Exception ex)
             {
