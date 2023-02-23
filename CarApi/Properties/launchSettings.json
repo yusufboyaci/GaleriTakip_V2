@@ -12,7 +12,7 @@
     "CarApi": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": true,
+      //"launchBrowser": true,//Swagger açılmasın diye kapatıldı
       "launchUrl": "swagger",
       "applicationUrl": "https://localhost:7139;http://localhost:5139",
       "environmentVariables": {

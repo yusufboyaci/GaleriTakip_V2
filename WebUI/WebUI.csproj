@@ -1,5 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TypeScriptTarget>ES2021</TypeScriptTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TypeScriptTarget>ES2021</TypeScriptTarget>
+  </PropertyGroup>
+
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
@@ -9,6 +17,37 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue-icons.common.js" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue-icons.common.js.map" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue-icons.common.min.js" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue-icons.common.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue-icons.css.map" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue-icons.esm.js" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue-icons.esm.js.map" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue-icons.esm.min.js" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue-icons.esm.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue-icons.js" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue-icons.js.map" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue-icons.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue-icons.min.js" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue-icons.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue.common.js" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue.common.js.map" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue.common.min.js" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue.common.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue.css.map" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue.esm.js" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue.esm.js.map" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue.esm.min.js" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue.esm.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue.js" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue.js.map" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue.min.js" />
+    <None Include="wwwroot\lib\bootstrap-vue\bootstrap-vue.min.js.map" />
   </ItemGroup>
 
   <ItemGroup>
